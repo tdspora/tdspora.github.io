@@ -1,0 +1,41 @@
+.wrapper {
+    margin-top: 88px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.illustration {
+    margin-bottom: 40px;
+    max-width: 450px;
+    width: 100%;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: var(--typography-2);
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.description {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.25rem;
+    color: var(--typography-3);
+    font-weight: 400;
+    max-width: 704px;
+    text-align: center;
+    line-height: 28px;
+}
+
+.description a {
+    color: var(--typography-4);
+}
