@@ -8,7 +8,7 @@ import {UnderConstructionComponent} from "../components/UnderConstructionCompone
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
 
-  const isUnderConstruction = true;
+  const isUnderConstruction = false;
 
   return (
       isUnderConstruction ? <UnderConstructionComponent /> :

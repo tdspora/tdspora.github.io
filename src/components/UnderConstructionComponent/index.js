@@ -4,8 +4,6 @@ import styles from './underConstructionComponent.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 export function UnderConstructionComponent() {
-
-
     return (
         <div className={clsx(styles.wrapper)}>
             <img
