@@ -17,11 +17,11 @@ export function HomepageHeader() {
                     <p className={clsx(styles.subtitle)}>Solution powered by <span>Machine Learning</span></p>
                     <ButtonView>Request a Demo</ButtonView>
                 </div>
-                <div >
+                <div className={clsx(styles.appInterfaces)}>
                     <img
-                        src={useBaseUrl('/img/under_construction_illustration.svg')}
+                        src={useBaseUrl('/img/app-interfaces.jpg')}
                         alt="app interfaces"
-                        className=""
+                        className={clsx(styles.appInterfacesImg)}
                     />
                 </div>
             </div>
