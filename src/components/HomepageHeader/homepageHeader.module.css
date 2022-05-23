@@ -27,6 +27,7 @@
     width: 100%;
     margin-bottom: 24px;
     color: var(--typography-2);
+    word-wrap: normal;
 }
 
 .subtitle {
@@ -34,6 +35,8 @@
     font-size: 1.25rem;
     margin-bottom: 48px;
     color: var(--typography-2);
+    text-align: center;
+    word-wrap: normal;
 }
 
 .subtitle > span {
