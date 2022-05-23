@@ -4,6 +4,7 @@ import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import {HomepageHeader} from "../components/HomepageHeader";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {UnderConstructionComponent} from "../components/UnderConstructionComponent";
+import {FooterView} from "../components/FooterView";
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
@@ -17,6 +18,7 @@ export default function Home() {
               <main>
                   <HomepageFeatures />
               </main>
+              <FooterView />
           </Layout>
   );
 }
