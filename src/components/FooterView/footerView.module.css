@@ -1,0 +1,32 @@
+.footer {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: var(--footer-background);
+}
+
+.container {
+    max-width: 1312px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1340px) {
+    .container {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.creditsMessage {
+    margin-right: 8px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: var(--typography-2);
+}
