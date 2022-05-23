@@ -1,8 +1,15 @@
-
 .featuresContainer {
     max-width: 1312px;
     width: 100%;
     margin: 0 auto;
+}
+
+@media screen and (max-width: 1340px) {
+    .featuresContainer {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    
 }
 
 .featureList {
@@ -19,6 +26,16 @@
 
 .feature:nth-child(2) {
     flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1100px) {
+    .feature {
+        flex-direction: column-reverse;
+    }
+
+    .feature:nth-child(2) {
+        flex-direction: column-reverse;
+    }
 }
 
 .messages {
@@ -44,9 +61,14 @@
     line-height: 36px;
 }
 
-
 .featureImageWrapper  {
     max-width: 784px;
     width: 100%;
     height: auto;
+}
+
+@media screen and (max-width: 1100px) {
+    .featureImageWrapper {
+        margin-bottom: 24px;
+    }
 }
