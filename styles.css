@@ -24,6 +24,7 @@
     color: var(--typography-2);
     font-weight: 600;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 .description {
@@ -38,4 +39,11 @@
 
 .description a {
     color: var(--typography-4);
+}
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
