@@ -9,7 +9,7 @@ const config = {
   tagline: 'Agile generation and delivery of test data',
   title: 'TDspora',
   url: 'https://epmc-tdm.github.io',
-  baseUrl: '/landing/',
+  baseUrl: '/tdspora.github.io/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
