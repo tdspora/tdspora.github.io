@@ -10,7 +10,7 @@
 @import url('./reset.css');
 
 :root {
-  --ifm-color-primary: #2e8555;
+  /* remove or overwrite */
   --ifm-color-primary-dark: #29784c;
   --ifm-color-primary-darker: #277148;
   --ifm-color-primary-darkest: #205d3b;
@@ -25,6 +25,13 @@
   --typography-2: #1B191B;
   --typography-3: #73818E;
   --typography-4: #008BB5;
+
+  /* overwrote basic colors */
+  --ifm-navbar-link-hover-color: #008BB5;
+  --ifm-menu-color-active: #008BB5;
+  --ifm-breadcrumb-color-active: #008BB5;
+  --ifm-color-primary: #008BB5;
+
 
   --footer-background: #F4F7FA;
 }
@@ -45,3 +52,16 @@ html {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+/*.navbar {*/
+/*  border: none;*/
+/*  background: transparent;*/
+/*  box-shadow: none;*/
+/*}*/
+
