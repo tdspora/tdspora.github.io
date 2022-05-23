@@ -19,9 +19,8 @@ export function HomepageHeader() {
                 </div>
                 <div className={clsx(styles.appInterfaces)}>
                     <img
-                        src={useBaseUrl('/img/app-interfaces.jpg')}
+                        src={useBaseUrl('/img/app-interfaces.png')}
                         alt="app interfaces"
-                        className={clsx(styles.appInterfacesImg)}
                     />
                 </div>
             </div>

@@ -1,11 +1,52 @@
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
+
+.featuresContainer {
+    max-width: 1312px;
+    width: 100%;
+    margin: 0 auto;
 }
 
-.featureSvg {
-  height: 200px;
-  width: 200px;
+.featureList {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 146px;
+}
+
+.feature:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: 448px;
+    width: 100%;
+}
+
+.messages h3 {
+    margin-bottom: 32px;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+    color: var(--typography-2);
+}
+
+.messages p {
+    margin-bottom: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 36px;
+}
+
+
+.featureImageWrapper  {
+    max-width: 784px;
+    width: 100%;
+    height: auto;
 }
