@@ -25,6 +25,8 @@
   --typography-2: #1B191B;
   --typography-3: #73818E;
   --typography-4: #008BB5;
+
+  --footer-background: #F4F7FA;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
