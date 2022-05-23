@@ -24,6 +24,7 @@
     color: var(--typography-2);
     font-weight: 600;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 .description {
