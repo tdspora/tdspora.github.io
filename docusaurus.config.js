@@ -63,16 +63,23 @@ const config = {
         },
         items: [
           {
-            type: 'doc',
-            docId: 'intro',
+            docId: 'features',
             position: 'right',
             label: 'Features',
+            href: '#homepage-features',
           },
           {
             type: 'doc',
             docId: 'intro',
             position: 'right',
             label: 'Documentation',
+          },
+          {
+            // type: 'doc',
+            to: '/req',
+            docId: 'requestsDemo',
+            position: 'right',
+            label: 'Request a Demo',
           },
         ],
       },
@@ -82,7 +89,14 @@ const config = {
       },
       colorMode: {
         disableSwitch: true,
-      }
+      },
+      algolia: {
+        contextualSearch: true,
+        indexName: 'test_docusaurus',
+        apiKey: '4e6a035890d549be349064f0b9d4e6e0',
+        appId: '7TV43E1U40',
+        placeholder: 'Search'
+      },
     }),
 };
 
