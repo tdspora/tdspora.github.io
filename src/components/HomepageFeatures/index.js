@@ -34,7 +34,7 @@ function Feature({path, title, description}) {
 
 export default function HomepageFeatures() {
   return (
-      <div className={clsx(styles.featuresContainer)}>
+      <div className={clsx(styles.featuresContainer)} id="homepage-features">
         <ul className={clsx(styles.featureList)}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
