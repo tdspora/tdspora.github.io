@@ -30,3 +30,8 @@
     line-height: 19px;
     color: var(--typography-2);
 }
+
+.logoImgContainer {
+    display: flex;
+    align-items: center;
+}
