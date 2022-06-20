@@ -10,7 +10,7 @@ const config = {
   title: "TDspora",
   url: "https://epmc-tdm.github.io",
   baseUrl: "/tdspora.github.io/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
@@ -36,8 +36,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+          editUrl: "https://github.com/tdspora/tdspora.github.io/tree/main/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -50,26 +49,37 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
+        hideOnScroll: true,
         logo: {
           alt: "TDspora Logo",
           src: "img/logo.svg",
         },
         items: [
           {
+            type: "dropdown",
             position: "right",
             label: "Product",
+            //activeBaseRegex: "product/",
             items: [
               {
                 label: "Overview",
-                href: "/product/overview",
+                to: "/product/overview",
               },
               {
-                label: "Overview 2",
-                href: "/product/overview",
-              },
-              {
-                label: "Item 3",
+                label: "Data Generation",
                 href: "/product/product",
+              },
+              {
+                label: "Advanced Data Sub-setting",
+                href: "/product/",
+              },
+              {
+                label: "Data Migration",
+                href: "/product/",
+              },
+              {
+                label: "Various SQL dialects",
+                href: "/product/",
               },
             ],
           },
@@ -105,6 +115,73 @@ const config = {
         apiKey: "4e6a035890d549be349064f0b9d4e6e0",
         appId: "7TV43E1U40",
         placeholder: "Search",
+      },
+      footer: {
+        // logo: {
+        //   alt: "TDSpora Logo",
+        //   src: "img/logo.svg",
+        //   href: "/",
+        //   // width: 160,
+        //   // height: 51,
+        // },
+        links: [
+          {
+            title: " ",
+            items: [
+              {
+                html: `
+                  <a href="/tdspora.github.io">
+                    <img src="/tdspora.github.io/img/logo.svg" alt="TDSpora Logo" />
+                  </a>
+                `,
+              },
+            ],
+          },
+          {
+            title: "Product",
+            items: [
+              {
+                label: "Overview",
+                href: "/product/overview",
+              },
+            ],
+          },
+          {
+            title: "Features",
+            items: [
+              {
+                label: "Data Generation",
+                href: "/docs/",
+              },
+              {
+                label: "Advanced Data Sub-setting",
+                href: "/docs/",
+              },
+              {
+                label: "Data Migration",
+                href: "/",
+              },
+              {
+                label: "Various SQL dialects",
+                href: "/",
+              },
+            ],
+          },
+          {
+            title: "Support",
+            items: [
+              {
+                label: "Documentation",
+                href: "/docs/introduction",
+              },
+              {
+                label: "Contact us",
+                href: "/",
+              },
+            ],
+          },
+        ],
+        copyright: `Sponsored by <img src="/tdspora.github.io/img/epam-logo.svg" alt="Epam logo"/>`,
       },
     }),
 };
