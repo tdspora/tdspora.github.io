@@ -75,7 +75,7 @@ const config = {
           },
           {
             type: "doc",
-            docId: "intro",
+            docId: "introduction",
             position: "right",
             label: "Documentation",
           },
@@ -88,6 +88,7 @@ const config = {
             to: "/demo",
             position: "right",
             label: "Request a Demo",
+            className: "button-nav",
           },
         ],
       },
