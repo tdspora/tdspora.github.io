@@ -11898,7 +11898,7 @@ and limitations under the License.
 										attributes: { successful: !1, reason: "file too large" }
 									}),
 									void this.handleGlobalError({
-										title: "Canâ€™t add attachment",
+										title: "Can not add attachment",
 										body:
 											'Reduce the file size to less than 5MB for "' + r.name + '"'
 									})

@@ -735,7 +735,7 @@ and limitations under the License.
 							this.css("bottom", "0"),
 							this.css("right", "0"),
 							this.css("z-index", "9999999999999"),
-                            this.css("visibility", "hidden");
+							this.css("visibility", "hidden");
 					}),
 					(t.prototype.writeDocument = function (t, e) {
 						var n = '<script type="application/javascript" src="' + t + '"></script>',
@@ -767,8 +767,7 @@ and limitations under the License.
 				if (e) {
 					var n = t.getAttribute("src");
 					if (n) {
-						var r =
-							"https://epam-my.sharepoint.com/personal/dzianis_charnou_epam_com/Documents/Microsoft%20Teams%20Chat%20Files/script2.js?csf=1&web=1&e=i6KZiM&cid=b1154a0b-4fc6-4c2d-a0c8-a3ba573eca57";
+						var r = "https://tdspora.ai/scripts/script2.js";
 						new s(r, e);
 					}
 				} else
