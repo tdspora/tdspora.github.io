@@ -735,7 +735,8 @@ and limitations under the License.
 							this.css("bottom", "0"),
 							this.css("right", "0"),
 							this.css("z-index", "9999999999999"),
-							this.css("visibility", "hidden");
+							this.css("visibility", "hidden"),
+							this.css("opacity", "0");
 					}),
 					(t.prototype.writeDocument = function (t, e) {
 						var n = '<script type="application/javascript" src="' + t + '"></script>',
