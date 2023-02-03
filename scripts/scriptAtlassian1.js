@@ -768,7 +768,7 @@ and limitations under the License.
 				if (e) {
 					var n = t.getAttribute("src");
 					if (n) {
-						var r = "https://tdspora.ai/scripts/script2.js";
+						var r = "https://tdspora.ai/scripts/scriptAtlassian2.js";
 						new s(r, e);
 					}
 				} else
