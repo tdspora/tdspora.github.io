@@ -1,0 +1,70 @@
+Subject: Hardcode field validation status, and repair a mojibake string
+
+Applies to: scriptAtlassianPure2.js  ->  scriptAtlassian2.js
+Atlassian source: the widget application bundle the embed loader pulls into
+                  the iframe (iframe.js)
+
+1. `fieldValidationStatus` (two occurrences) no longer derives required-ness
+   from `getFormFields()`. It is replaced with a fixed literal:
+       { summary: true, description: true, attachment: true, email: true }
+
+   THIS IS A CONSTRAINT ON THE JSM PROJECT, not just on this file.
+   The widget's request type must expose exactly these four fields. Add a
+   required field to it in Jira and the widget will report the form valid,
+   submit an incomplete payload, and surface no usable message to the visitor.
+   Because the widget no longer validates, our own React forms are the only
+   validation a visitor gets - any new entry point must reproduce it.
+
+2. "Can<mojibake>t add attachment" -> "Can not add attachment".
+   Not a feature: the pristine bundle was saved through a Latin-1 round trip
+   and its apostrophe is corrupted. If these bundles are ever re-vendored as
+   UTF-8, drop this hunk rather than carrying it forward.
+
+--- scriptAtlassianPure2.js	2026-05-28 13:25:28.694772785 +0200
++++ scriptAtlassian2.js	2026-05-28 13:25:28.694772785 +0200
+@@ -11799,13 +11799,12 @@
+ 							submitInProgress: !1,
+ 							submitWasAttemptedByUser: !1,
+ 							shouldFocusFirstInvalidField: !1,
+-							fieldValidationStatus: o.reduce(
+-								t.getFormFields(),
+-								function (e, t) {
+-									return (e[t.id] = !t.required), e;
+-								},
+-								{}
+-							)
++							fieldValidationStatus: {
++								summary: true,
++								description: true,
++								attachment: true,
++								email: true
++							}
+ 						}),
+ 						(t.handleCloseGlobalError = function () {
+ 							t.setState({ globalErrorShown: !1 });
+@@ -11860,10 +11859,12 @@
+ 						var n;
+ 						this.setState({
+ 							shouldFocusFirstInvalidField: !1,
+-							fieldValidationStatus: o.merge(
+-								this.state.fieldValidationStatus,
+-								((n = {}), (n[e.id] = G(e, t)), n)
+-							)
++							fieldValidationStatus: {
++								summary: true,
++								description: true,
++								attachment: true,
++								email: true
++							}
+ 						});
+ 					}),
+ 					(t.prototype.handleGlobalError = function (e) {
+@@ -11897,7 +11898,7 @@
+ 										attributes: { successful: !1, reason: "file too large" }
+ 									}),
+ 									void this.handleGlobalError({
+-										title: "Canâ€™t add attachment",
++										title: "Can not add attachment",
+ 										body:
+ 											'Reduce the file size to less than 5MB for "' + r.name + '"'
+ 									})

@@ -1,0 +1,46 @@
+Subject: Hide the widget frame and re-host its body script on our own origin
+
+Applies to: scriptAtlassianPure1.js  ->  scriptAtlassian1.js
+Atlassian source: the embed loader served as /assets/embed.js by
+                  https://jsd-widget.atlassian.com
+
+Two changes, both load-bearing:
+
+1. `visibility: hidden` / `opacity: 0` on the #jsd-widget iframe.
+   The site never shows Atlassian's own UI. The frame is driven headlessly by
+   our React code (src/components/SupportLauncher, src/components/contact) and
+   only ever acts as the thing that performs the submission. Removing this
+   exposes Atlassian's unstyled launcher in the corner of every page.
+
+2. The iframe body script is pinned to an absolute tdspora.ai URL instead of
+   being derived relative to the loader's own origin.
+   This is what makes the iframe same-origin with the page, which is the only
+   reason `contentWindow.document` can be read at all. Everything the site does
+   with the widget depends on it.
+   Consequence: the page and these bundles MUST be served from the same origin.
+   On any other origin every read throws a cross-origin SecurityError;
+   src/lib/supportWidget.js converts that into null and the UI falls back to
+   the support portal.
+
+--- scriptAtlassianPure1.js	2026-05-28 13:25:28.694772785 +0200
++++ scriptAtlassian1.js	2026-05-28 13:25:28.690772240 +0200
+@@ -734,7 +734,9 @@
+ 							this.css("border", "0"),
+ 							this.css("bottom", "0"),
+ 							this.css("right", "0"),
+-							this.css("z-index", "9999999999999");
++							this.css("z-index", "9999999999999"),
++							this.css("visibility", "hidden"),
++							this.css("opacity", "0");
+ 					}),
+ 					(t.prototype.writeDocument = function (t, e) {
+ 						var n = '<script type="application/javascript" src="' + t + '"></script>',
+@@ -766,7 +768,7 @@
+ 				if (e) {
+ 					var n = t.getAttribute("src");
+ 					if (n) {
+-						var r = n.substring(0, n.lastIndexOf("/")) + "/iframe.js";
++						var r = "https://tdspora.ai/scripts/scriptAtlassian2.js";
+ 						new s(r, e);
+ 					}
+ 				} else
